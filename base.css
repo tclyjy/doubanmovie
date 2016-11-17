@@ -2,7 +2,7 @@
 * @Author: XM-web
 * @Date:   2016-11-17 16:24:44
 * @Last Modified by:   XM-web
-* @Last Modified time: 2016-11-17 16:27:05
+* @Last Modified time: 2016-11-17 19:26:59
 */
 .sidebar {
   display: none;
@@ -26,16 +26,39 @@
 }
 
 .main {
-  padding: 20px;
+  padding: 60px 20px 0 20px;
 }
 
 @media (min-width: 768px) {
   .main {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
 
 .main .page-header {
   margin-top: 0;
 }
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.media-body {
+  width: 60%;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+.sidebar {
+  height: 100%;
+}
+

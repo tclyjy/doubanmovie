@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="moviecat">
 
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="base.css">
 </head>
-<script src="node_modules/angular/angular.min.js"></script>
-<script src="node_modules/angular-route/angular-route.min.js"></script>
+
 
 <body>
     <nav class="navbar navbar-default" role="navigation">
@@ -50,23 +49,16 @@
                 </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view>
-                <div class="page-header">
-                    <h1>Example page header <small>Subtext for header</small></h1>
-                </div>
-                <div class="media">
-                    <a class="media-left media-middle" href="#">
-                        <img data-src="..." alt="...">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Middle aligned media</h4> ...
-                    </div>
-                </div>
+            </div>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/angular-route/angular-route.min.js"></script>
+
 <!-- 主模块 -->
 <script src="base.js"></script>
 <!-- 组件 -->

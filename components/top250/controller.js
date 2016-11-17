@@ -2,13 +2,13 @@
 * @Author: XM-web
 * @Date:   2016-11-17 16:36:15
 * @Last Modified by:   XM-web
-* @Last Modified time: 2016-11-17 16:46:40
+* @Last Modified time: 2016-11-17 17:25:08
 */
 
 (function(angular){
 	'use strict';
 
-	angular.module('moviecat.in_theaters',['ngRoute'])
+	angular.module('moviecat.top250',['ngRoute'])
 
 	.config(['$routeProvider',function($routeProvider){
 		$routeProvider.when('/top250',{
