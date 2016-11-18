@@ -2,7 +2,7 @@
  * @Author: XM-web
  * @Date:   2016-11-17 19:50:09
  * @Last Modified by:   XM-web
- * @Last Modified time: 2016-11-17 21:06:28
+ * @Last Modified time: 2016-11-18 09:20:28
  */
 
 'use strict';
@@ -11,23 +11,29 @@
 
 (function(angular) {
     angular.module('moviecat.services.http', [])
-        .service('httpService', ['$document', '$window', function($document, $window) {
+        .service('httpService', ['$window', '$document', function($window, $document) {
+            //数据URL格式：地址/分页 +?+ start=number +&+ count=number +&+ callback=*
+            //https://api.douban.com/v2/movie/in_theaters?start=0&count=10&callback=my_jsonp_randomNumber
             this.jsonp = function(url, data, callback) {
-                //自定义函数名称
+                //自定义callback函数名称
                 var callbackName = 'my_jsonp_' + Math.random().toString().replace('.', '');
-                //挂载回调函数       
+                //挂载回调函数
+                //$window[function]相当于声明一个全局函数,挂载api请求的callback函数
                 $window[callbackName] = callback;
+
                 //处理URL地址
-                var querystring = url.indexOf('?') == -1 ? '?' : '&';
+                var urlString = url.indexOf('?') == -1 ? '?' : '&';
                 for (var key in data) {
-                    querystring += key + '=' + data[key] + '&';
+                    urlString += key + '=' + data[key] + '&'
                 }
-                querystring += 'callback=' + callbackName;
+                urlString += 'callback=' + callbackName;
                 //创建script标签
                 var scriptElement = $document[0].createElement('script');
-                //将scrpit标签添加到页面上
-                scriptElement.src = url + querystring;
+
+                //将完整的url地址添加到script标签src属性上，并添加到页面上
+
+                scriptElement.src = url + urlString;
                 $document[0].body.appendChild(scriptElement);
-            };
+            }
         }])
 })(angular)

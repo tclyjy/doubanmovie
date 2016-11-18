@@ -2,7 +2,7 @@
 * @Author: XM-web
 * @Date:   2016-11-17 16:24:44
 * @Last Modified by:   XM-web
-* @Last Modified time: 2016-11-17 20:54:25
+* @Last Modified time: 2016-11-18 09:49:07
 */
 .sidebar {
   display: none;
@@ -71,3 +71,6 @@
   display: inline-block;
 }
 
+a.page {
+  cursor: pointer;
+}
