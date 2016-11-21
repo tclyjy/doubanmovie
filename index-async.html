@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="moviecat">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>豆瓣电影</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="base.css">
+    <script src="node_modules/scriptjs/dist/script.min.js"></script>
+    <script>
+    $script(
+        'node_modules/angular/angular.min.js',function() {
+            $script('node_modules/angular-route/angular-route.min.js', function() {
+                $script([
+                	'base.js',
+                    'components/controller.js',
+                    'http.js'
+                	],function() {
+                		angular.bootstrap(document, ['moviecat']);
+                });
+            });
+        })
+    </script>
 </head>
 
 <body>
@@ -55,10 +70,3 @@
 </body>
 
 </html>
-<script src="node_modules/angular/angular.min.js"></script>
-<script src="node_modules/angular-route/angular-route.min.js"></script>
-<!-- 主模块 -->
-<script src="base.js"></script>
-<!-- 组件 -->
-<script src="components/controller.js"></script>
-<script src="http.js"></script>
