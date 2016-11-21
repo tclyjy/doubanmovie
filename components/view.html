@@ -20,7 +20,7 @@
 <nav>
   <ul class="pagination">
     <li ng-class="{disabled:currentPage<=1}"><a class="page" ng-click="go(currentPage - 1)">&laquo;上一页</a></li>
-    <li ng-repeat="num in repeatPages"><a href="#/">{{num}} <span class="sr-only">(current)</span></a></li>
+    <li ng-repeat="num in repeatPages" ng-click="go(num)" ng-class="{active:currentPage==num}"><a class="page">{{num}} <span class="sr-only">(current)</span></a></li>
     <li ng-class="{disabled:currentPage>=totalPages}"><a class="page" ng-click="go(currentPage + 1)">下一页&raquo;</a></li>
   </ul>
 </nav>

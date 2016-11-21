@@ -2,7 +2,7 @@
  * @Author: XM-web
  * @Date:   2016-11-17 16:36:15
  * @Last Modified by:   XM-web
- * @Last Modified time: 2016-11-21 14:23:10
+ * @Last Modified time: 2016-11-21 15:17:08
  */
 
 (function(angular) {
@@ -45,6 +45,7 @@
         $scope.go = function(page) {
         // 传过来的是第几页我就跳第几页
         // 一定要做一个合法范围校验
+        console.log(page);
         if (page >= 1 && page <= $scope.totalPages)
           $route.updateParams({ page: page });
       };
