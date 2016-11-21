@@ -2,7 +2,7 @@
  * @Author: XM-web
  * @Date:   2016-11-17 19:50:09
  * @Last Modified by:   XM-web
- * @Last Modified time: 2016-11-18 09:20:28
+ * @Last Modified time: 2016-11-21 16:14:19
  */
 
 'use strict';
@@ -19,8 +19,10 @@
                 var callbackName = 'my_jsonp_' + Math.random().toString().replace('.', '');
                 //挂载回调函数
                 //$window[function]相当于声明一个全局函数,挂载api请求的callback函数
-                $window[callbackName] = callback;
-
+                $window[callbackName] = function(data){
+                    callback(data);
+                    $document[0].body.removeChild(scriptElement);
+                }
                 //处理URL地址
                 var urlString = url.indexOf('?') == -1 ? '?' : '&';
                 for (var key in data) {
