@@ -2,15 +2,21 @@
  * @Author: XM-web
  * @Date:   2016-11-17 16:34:38
  * @Last Modified by:   XM-web
- * @Last Modified time: 2016-11-21 14:37:06
+ * @Last Modified time: 2016-11-21 19:13:47
  */
 
 'use strict';
 
 angular.module('moviecat', [
         'ngRoute',
-        'moviecat.movielist'
+        'moviecat.moviedetail',
+        'moviecat.movielist',
     ])
+    .constant('moviecatConstant',{ //控制器常量依赖管理
+        countNum:10,
+        listApiAddress: 'https://api.douban.com/v2/movie/',
+        detailApiAddress: 'https://api.douban.com/v2/movie/subject/'
+    })
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.otherwise({ redirectTo: '/in_theaters/1' });
     }])
@@ -24,5 +30,12 @@ angular.module('moviecat', [
     			$scope.type = 'coming_soon';
     		if(now.startsWith('/top250'))
     			$scope.type = 'top250';
-    	});
+    	})
+	}])
+	.controller('searchController',['$scope','$route',function($scope,$route){
+    	$scope.input = '';
+    	$scope.search = function(){
+    		$route.updateParams({ movieclass:'search', q: $scope.input });
+    	}
+    	
     }])

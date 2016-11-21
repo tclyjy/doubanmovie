@@ -2,7 +2,7 @@
     <h1>{{title}}</h1>
 </div>
 <div class="list-group">
-    <a href="#" ng-repeat="item in subjects" class="list-group-item" >
+    <a href="#/detail/{{item.id}}" ng-repeat="item in subjects" class="list-group-item" >
         <div class="media">
             <img ng-src="{{item.images.medium}}" alt="{{item.images.alt}}">
             <div class="media-body">

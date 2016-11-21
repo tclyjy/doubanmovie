@@ -2,7 +2,7 @@
  * @Author: XM-web
  * @Date:   2016-11-17 19:50:09
  * @Last Modified by:   XM-web
- * @Last Modified time: 2016-11-21 16:14:19
+ * @Last Modified time: 2016-11-21 17:23:09
  */
 
 'use strict';
@@ -15,6 +15,9 @@
             //数据URL格式：地址/分页 +?+ start=number +&+ count=number +&+ callback=*
             //https://api.douban.com/v2/movie/in_theaters?start=0&count=10&callback=my_jsonp_randomNumber
             this.jsonp = function(url, data, callback) {
+                if(typeof data == 'function'){
+                    callback = data;
+                }
                 //自定义callback函数名称
                 var callbackName = 'my_jsonp_' + Math.random().toString().replace('.', '');
                 //挂载回调函数
