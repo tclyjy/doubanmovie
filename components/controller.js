@@ -2,7 +2,7 @@
  * @Author: XM-web
  * @Date:   2016-11-17 16:36:15
  * @Last Modified by:   XM-web
- * @Last Modified time: 2016-11-18 10:20:51
+ * @Last Modified time: 2016-11-21 14:23:10
  */
 
 (function(angular) {
@@ -33,7 +33,6 @@
                 $scope.subjects = data.subjects;
                 $scope.totalCount = data.total;
                 $scope.totalPages = Math.ceil(data.total / countNum);
-                console.log($scope.totalPages);
                 $scope.repeatPages =[];
                 for(var i=0;i<$scope.totalPages;i++){
                 	$scope.repeatPages[i]=i+1;
