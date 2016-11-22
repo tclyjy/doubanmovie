@@ -2,7 +2,7 @@
  * @Author: XM-web
  * @Date:   2016-11-17 16:34:38
  * @Last Modified by:   XM-web
- * @Last Modified time: 2016-11-21 19:13:47
+ * @Last Modified time: 2016-11-22 17:21:51
  */
 
 'use strict';
@@ -11,6 +11,7 @@ angular.module('moviecat', [
         'ngRoute',
         'moviecat.moviedetail',
         'moviecat.movielist',
+       // 'pagingModule'
     ])
     .constant('moviecatConstant',{ //控制器常量依赖管理
         countNum:10,
